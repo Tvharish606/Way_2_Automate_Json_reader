@@ -42,16 +42,16 @@ public class Baseclass
 	{
 		String users[]=data.split(",");
 		driver.get("https://www.way2automation.com/way2auto_jquery/registration.php#load_box");
-		driver.findElement(By.xpath("(//input[@name='name'])[1]")).sendKeys(users[0]);
-		Thread.sleep(02000);
-		driver.findElement(By.xpath("(//input[@type='text'])[2]")).sendKeys(users[1]);
-		Thread.sleep(3000);
+		driver.findElement(By.xpath("(//input[@name='name'])[1]")).sendKeys(users[1]);
+		Thread.sleep(05000);
+		driver.findElement(By.xpath("(//input[@type='text'])[2]")).sendKeys(users[0]);
+		Thread.sleep(5000);
 		
 	}
 	@DataProvider(name = "Data_Filling")
 	public String[] readfile() throws IOException, ParseException
 	{
-		JSONParser jsonparse=new JSONParser();
+		JSONParser jsonparse=new JSONParser();  //convert 
 		FileReader reader=new FileReader(".\\Json_File\\form_file_data.json");
 	Object obj	=(Object)jsonparse.parse(reader);
 	JSONObject user_details=(JSONObject) obj;
